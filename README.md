@@ -6,7 +6,7 @@ Commands and functions to help you compose and submit long prompts as a markdown
 
 - `prompt_md#send_at_this_path()`:
     - Put `@<the current file path (buffer name)>` at the last `*.prompt.md` file.
-- `prompt_md#send_at_this_path_with_hash_line_and_switch_to_prompt()`:
+- `prompt_md#send_at_this_path_with_hash_line_and_open_to_prompt()`:
     - Put `@<the current file path (buffer name)>#<the current line number>` at the last `*.prompt.md` file.
 - `prompt_md#send_last_word()`:
     - Put `<the last word under the cursor>` at the last `*.prompt.md` file.
@@ -14,6 +14,8 @@ Commands and functions to help you compose and submit long prompts as a markdown
     - Put the selected lines (if no lines are selected, the entire buffer) at the last `*.prompt.md` file and switch to it.
 - `prompt_md#send(string)`:
     - Put the argument `string` at the last `*.prompt.md` file and switch to it.
+- `prompt_md#open_prompt()`:
+    - Open the last `*.prompt.md` file.
 
 ### `*_and_open_prompt()` Variants
 
