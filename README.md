@@ -10,7 +10,7 @@ Commands and functions to help you compose and submit long prompts as a markdown
     - Put `@<the current file path (buffer name)>` at the last `*.prompt.md` file.
 - `prompt_md#send_at_this_path_with_hash_line_and_open_to_prompt()`:
     - Put `@<the current file path (buffer name)>#<the current line number>` at the last `*.prompt.md` file.
-- `prompt_md#send_last_word()`:
+- `prompt_md#send_word()`:
     - Put `<the last word under the cursor>` at the last `*.prompt.md` file.
 - `prompt_md#send_selection()`:
     - Put the selected lines (if no lines are selected, the entire buffer) at the last `*.prompt.md` file and switch to it.
@@ -25,7 +25,7 @@ Commands and functions to help you compose and submit long prompts as a markdown
     - Put `@<the current file path (buffer name)>#<the current line number>` at the last `*.prompt.md` file, then switch to the `*.prompt.md` file.
 - `prompt_md#send_at_this_path_with_hash_line_and_open_prompt()`:
     - Put `@<the current file path (buffer name)>#<the current line number>` at the last `*.prompt.md` file, then switch to the `*.prompt.md` file.
-- `prompt_md#send_last_word_and_open_prompt()`:
+- `prompt_md#send_word_and_open_prompt()`:
     - Put `<the last word under the cursor>` at the last `*.prompt.md` file, then switch to the `*.prompt.md` file.
 - `prompt_md#send_selection_and_open_prompt()`:
     - Put the selected lines (if no lines are selected, the entire buffer) at the last `*.prompt.md` file, then switch to the `*.prompt.md` file.
@@ -46,4 +46,4 @@ Commands and functions to help you compose and submit long prompts as a markdown
 
 ## Compatibility
 
-This plugin is written in plain-old Vim script, but I tested it only on Neovim. Sorry if it does not work on Vim.
+This plugin is written in plain-old Vim script, but I tested it only on Neovim and it depends on several Neovim-specific terminal functions. Feel free to send a pull request if you want to make it compatible with Vim.
