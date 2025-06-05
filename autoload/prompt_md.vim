@@ -35,17 +35,22 @@ function! prompt_md#send_at_this_path()
   e #
 endfunction
 
-function! prompt_md#send_at_this_path_with_hash_line_and_open_prompt()
+function! prompt_md#send_at_this_path_with_hash_line_and_open_prompt() range
   let l:current_file = expand('%:p')
   if empty(l:current_file)
     echoerr "No file path available"
     return
   endif
-  let l:line_num = line('.')
-  call prompt_md#send_and_open_prompt('@' . l:current_file . '#' . l:line_num)
+  let l:start_line = line("'<") || line('.')
+  let l:end_line = line("'>")
+  if l:end_line == 0
+    call prompt_md#send_and_open_prompt('@' . l:current_file . '#' . l:start_line)
+  else
+    call prompt_md#send_and_open_prompt('@' . l:current_file . '#' . l:start_line . '-' . l:end_line)
+  endif
 endfunction
 
-function! prompt_md#send_at_this_path_with_hash_line()
+function! prompt_md#send_at_this_path_with_hash_line() range
   call prompt_md#send_at_this_path_with_hash_line_and_open_prompt()
   e #
 endfunction
