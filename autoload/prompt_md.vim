@@ -22,7 +22,7 @@ function! prompt_md#open_prompt_file()
 endfunction
 
 function! prompt_md#send_at_this_path_and_open_prompt()
-  let l:current_file = expand('%:p')
+  let l:current_file = expand('%:p:.')
   if empty(l:current_file)
     echoerr "No file path available"
     return
@@ -36,7 +36,7 @@ function! prompt_md#send_at_this_path()
 endfunction
 
 function! prompt_md#send_at_this_path_with_hash_line_and_open_prompt() range
-  let l:current_file = expand('%:p')
+  let l:current_file = expand('%:p:.')
   if empty(l:current_file)
     echoerr "No file path available"
     return
