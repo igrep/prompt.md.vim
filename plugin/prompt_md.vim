@@ -22,4 +22,4 @@ command! -nargs=1 PromptMdSendAndOpenPrompt call prompt_md#send_and_open_prompt(
 command! PromptMdOpenPromptFile call prompt_md#open_prompt_file()
 
 command! PromptMdSubmit call prompt_md#submit()
-command! -range=% PromptMdSubmitSelection call prompt_md#submit_selection()
+command! PromptMdSubmitSelection -range=% call prompt_md#submit_selection()
