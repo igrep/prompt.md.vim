@@ -41,7 +41,10 @@ function! prompt_md#send_at_this_path_with_hash_line_and_open_prompt() range
     echoerr "No file path available"
     return
   endif
-  let l:start_line = line("'<") || line('.')
+  let l:start_line = line("'<")
+  if l:start_line == 0
+    let l:start_line = line('.')
+  endif
   let l:end_line = line("'>")
   if l:end_line == 0
     call prompt_md#send_and_open_prompt('@' . l:current_file . '#' . l:start_line)
