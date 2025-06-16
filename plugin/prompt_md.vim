@@ -3,9 +3,12 @@ if exists('g:loaded_prompt_md')
 endif
 let g:loaded_prompt_md = 1
 
-autocmd BufReadPost,BufNewFile *.prompt.md call prompt_md#remember_last_prompt_file()
-autocmd WinLeave *.prompt.md call prompt_md#remember_last_prompt_file()
-autocmd TermOpen term://*claude* call prompt_md#remember_last_claude_terminal()
+augroup prompt_md
+  autocmd!
+  autocmd BufReadPost,BufNewFile *.prompt.md call prompt_md#remember_last_prompt_file()
+  autocmd CursorMoved *.prompt.md call prompt_md#remember_last_prompt_file()
+  autocmd TermOpen term://*claude* call prompt_md#remember_last_claude_terminal()
+augroup END
 
 command! PromptMdSendAtThisPath call prompt_md#send_at_this_path()
 command! -range PromptMdSendAtThisPathWithHashLine call prompt_md#send_at_this_path_with_hash_line()
