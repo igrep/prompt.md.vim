@@ -15,7 +15,7 @@ endfunction
 " Switch to the last *.prompt.md file
 function! prompt_md#open_prompt_file()
   if empty(s:last_prompt_file)
-    echoerr "No *.prompt.md file remembered"
+    echoerr "No *.prompt.md file opened yet"
     return
   endif
   execute 'edit ' . s:last_prompt_file['path']
