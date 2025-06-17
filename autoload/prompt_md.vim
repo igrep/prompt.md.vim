@@ -92,7 +92,7 @@ endfunction
 
 function! prompt_md#send_and_open_prompt(string)
   if empty(s:last_prompt_file)
-    echoerr "No *.prompt.md file remembered"
+    echoerr "No *.prompt.md file opened yet"
     return
   endif
 
@@ -115,7 +115,7 @@ endfunction
 
 function! prompt_md#submit()
   if empty(s:last_prompt_file)
-    echoerr "No *.prompt.md file remembered"
+    echoerr "No *.prompt.md file opened yet"
     return
   endif
 
